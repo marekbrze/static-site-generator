@@ -39,3 +39,12 @@ class LeafNode(HTMLNode):
         if self.props != None:
             return f"<{self.tag} {super().props_to_html()}>{self.value}</{self.tag}>"
         return f"<{self.tag}>{self.value}</{self.tag}>"
+
+
+class ParentNode(HTMLNode):
+    def __init__(self, tag, children, props=None):
+        super().__init__(tag, children=children, props=props)
+
+    def to_html(self):
+        if self.tag == None:
+            raise ValueError("You need to specify tag!")
