@@ -46,5 +46,9 @@ class ParentNode(HTMLNode):
         super().__init__(tag, children=children, props=props)
 
     def to_html(self):
+        if self.tag == None and self.children == None:
+            raise ValueError("You need to specify tag and children!")
         if self.tag == None:
             raise ValueError("You need to specify tag!")
+        if self.children == None:
+            raise ValueError("You need to specify children!")
