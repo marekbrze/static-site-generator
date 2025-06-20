@@ -11,11 +11,9 @@ class TestSplitDelimiter(unittest.TestCase):
         self.assertEqual(
             new_nodes,
             [
-                [
-                    TextNode("This is text with a ", TextType.TEXT),
-                    TextNode("code block", TextType.CODE),
-                    TextNode(" word", TextType.TEXT),
-                ]
+                TextNode("This is text with a ", TextType.TEXT),
+                TextNode("code block", TextType.CODE),
+                TextNode(" word", TextType.TEXT),
             ],
         )
 
